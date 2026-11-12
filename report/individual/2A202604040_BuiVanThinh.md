@@ -154,6 +154,5 @@ Trong các mô hình pose estimation (như HRNet, YOLO-Pose), tọa độ keypoi
 ## 8. Khó khăn và lỗi kỹ thuật
 Giao diện CVAT đôi khi cần tải lại khi nạp nhiều ảnh lớn, đã khắc phục bằng cách chạy chế độ `lab.py lite` để tối ưu tài nguyên RAM của máy. Quá trình xuất dữ liệu và kiểm tra diễn ra trơn tru với script `check_submission.py`.
 
-## 9. Tài liệu tham khảo và công cụ AI đã dùng
+## 9. Tài liệu tham khảo và công cụ đã dùng
 - Tài liệu COCO Keypoints Format 1.0.
-- Trợ lý AI và mô hình nhận diện pose (YOLOv8-pose, MediaPipe FaceLandmarker) được sử dụng để hỗ trợ tăng tốc độ gán nhãn thô và rà soát các trường hợp che khuất theo sự đồng ý của giảng viên. Tất cả kết quả đều được kiểm định bằng mắt và xác nhận đạt chuẩn qua script `check_submission.py`.
