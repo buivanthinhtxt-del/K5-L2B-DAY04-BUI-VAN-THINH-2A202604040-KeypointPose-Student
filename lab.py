@@ -138,7 +138,8 @@ class Cvat:
     def login(self, user=None):
         tok, sid = os.environ.get("CVAT_TOKEN"), os.environ.get("CVAT_SESSIONID")
         if tok:
-            self.h["Authorization"] = f"Bearer {tok}"
+            prefix = "Bearer" if tok.startswith("ey") else "Token"
+            self.h["Authorization"] = f"{prefix} {tok}"
         elif sid:  # chỉ dùng khi kiểm thử
             csrf = "".join(secrets.choice(string.ascii_letters + string.digits) for _ in range(32))
             self.h.update({"Cookie": f"sessionid={sid}; csrftoken={csrf}", "X-CSRFToken": csrf, "Referer": self.url + "/"})
