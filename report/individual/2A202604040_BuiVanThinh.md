@@ -104,22 +104,21 @@ Dán phần **TÓM TẮT** in ra từ `src/check_submission.py`:
 ```text
 - File person: BuiVanThinh_persons.zip
   Số ảnh: 12 · số skeleton `person`: 19 · mỗi annotation 51 số
-  Skeleton theo ảnh: 000000030960=2, 000000054909=2, 000000122199=2, 000000164659=1, 000000196283=1, 000000201702=1, 000000220045=1, 000000413160=3, 000000438099=2, 000000461002=2, 000000493741=1, 000000564304=1
-  Cờ v: v=2 246 (76%) · v=1 30 (9%) · v=0 47 (15%)
-  num_keypoints trung bình: 14.5
+  Skeleton theo ảnh: 000000030960=2, 000000054909=2, 000000122199=2, 000000164659=1, 000000196283=1, 000000201702=1, 000000220045=2, 000000413160=3, 000000438099=1, 000000461002=2, 000000493741=1, 000000564304=1
+  Cờ v: v=2 228 (71%) · v=1 38 (12%) · v=0 57 (18%)
+  num_keypoints trung bình: 14.0
 - File face: BuiVanThinh_faces.zip
   Số ảnh: 8 · số skeleton `face`: 8 · mỗi annotation 39 số
   Skeleton theo ảnh: face_122747=1, face_13874=1, face_232598=1, face_380754=1, face_449454=1, face_560526=1, face_79591=1, face_85624=1
-  Cờ v: v=2 96 (92%) · v=1 8 (8%) · v=0 0 (0%)
+  Cờ v: v=2 88 (85%) · v=1 16 (15%) · v=0 0 (0%)
   num_keypoints trung bình: 13.0
-- Ghi chú: 47 điểm v = 0 vẫn mang tọa độ cũ (CVAT 2.x xuất như vậy; chuẩn COCO ghi 0, 0). Không phải lỗi: điểm v = 0 bị bỏ qua khi huấn luyện và khi chấm.
-- Số [LỖI]: 0 · số [CẢNH BÁO]: 4
+- Ghi chú: 57 điểm v = 0 vẫn mang tọa độ cũ (CVAT 2.x xuất như vậy; chuẩn COCO ghi 0, 0). Không phải lỗi: điểm v = 0 bị bỏ qua khi huấn luyện và khi chấm.
+- Số [LỖI]: 0 · số [CẢNH BÁO]: 3
 Kết quả: ĐẠT (đọc lại từng cảnh báo ở trên)
 ```
 
 Các `[CẢNH BÁO]` còn giữ nguyên và lý do:
-1. `000000122199.jpg #2`, `000000164659.jpg #1`, `000000461002.jpg #1`: Cảnh báo cặp knee / ankle nằm ngược phía. Lý do giữ nguyên: Đây là tư thế thực tế của người trong ảnh đang bước đi bắt chéo chân hoặc nghiêng người khi trượt ván / đi bộ, các điểm đã được kiểm tra bằng mắt đúng theo giải phẫu cơ thể của người trong ảnh chứ không phải lỗi đổi nhầm trái/phải (`lr_swap`).
-2. `000000438099.jpg #1`: Cảnh báo các điểm trải cao 49 px. Lý do giữ nguyên: Người này có chiều cao thật trên 60 px nhưng phần thân dưới bị mép ảnh cắt ngang nên khoảng cách từ đầu đến điểm thấp nhất nhìn thấy đo được 49 px, phù hợp với quy tắc của lab đối với người bị cắt khung.
+1. `000000122199.jpg #2`, `000000164659.jpg #1`, `000000461002.jpg #2`: Cảnh báo cặp knee / ankle nằm ngược phía. Lý do giữ nguyên: Đây là tư thế thực tế của người trong ảnh đang bước đi bắt chéo chân hoặc tư thế khi trượt ván / vận động, các điểm đã được kiểm tra bằng mắt đúng theo giải phẫu cơ thể của người trong ảnh chứ không phải lỗi đổi nhầm trái/phải (`lr_swap`).
 
 ## 6. Ảnh chụp màn hình
 
