@@ -38,6 +38,28 @@
    "task_id": 11,
    "job_id": 11,
    "task_name": "faces-BuiVanThinh"
+  },
+  "persons-extra": {
+   "task_id": 12,
+   "job_id": 12,
+   "task_name": "persons-extra-BuiVanThinh"
+  },
+  "faces-extra": {
+   "task_id": 13,
+   "job_id": 13,
+   "task_name": "faces-extra-BuiVanThinh"
   }
- }
+ },
+ "persons_extra": [
+  "000000465508.jpg",
+  "000000507223.jpg",
+  "000000565600.jpg"
+ ],
+ "faces_extra": [
+  "face_102517.jpg",
+  "face_300200.jpg",
+  "face_317330.jpg",
+  "face_379585.jpg",
+  "face_68290.jpg"
+ ]
 }
